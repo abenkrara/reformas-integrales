@@ -1,4 +1,4 @@
-/* General */
+﻿/* General */
 :root {
   --primary: #d4af37;
   /* Muted Gold */
@@ -579,4 +579,119 @@ section {
 
 .mb-4 {
   margin-bottom: 1.5rem;
+}
+/* ========== MOBILE STYLES ========== */
+@media (max-width: 991px) {
+  /* Fix Hero background on mobile (remove fixed attachment) */
+  #hero {
+    background-attachment: scroll;
+    min-height: 100vh;
+  }
+
+  #hero h1 {
+    font-size: 36px;
+  }
+
+  #hero h2 {
+    font-size: 16px;
+  }
+
+  #hero .btn-menu,
+  #hero .btn-book {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    text-align: center;
+  }
+
+  /* Mobile Navigation */
+  .navbar ul {
+    display: none;
+  }
+
+  .navbar.navbar-mobile {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(12, 11, 9, 0.98);
+    transition: 0.3s;
+    z-index: 998;
+  }
+
+  .navbar.navbar-mobile ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 30px;
+  }
+
+  .navbar.navbar-mobile a {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+  }
+
+  /* About section mobile */
+  .about .content {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .about-img-container::before {
+    display: none;
+  }
+
+  /* Services grid */
+  .services .row {
+    flex-direction: column;
+  }
+
+  .services .col-lg-4 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Portfolio slider */
+  .portfolio-item img {
+    height: 250px;
+  }
+
+  /* Contact info boxes */
+  .contact .col-lg-4 {
+    width: 100%;
+  }
+
+  /* Grid columns */
+  .col-lg-5, .col-lg-6, .col-lg-9, .col-lg-10 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .order-1 { order: 1; }
+  .order-2 { order: 2; }
+}
+
+@media (min-width: 992px) {
+  .mobile-nav-toggle {
+    display: none;
+  }
 }

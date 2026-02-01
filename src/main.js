@@ -1,4 +1,4 @@
-import './style.css';
+﻿import './style.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Swiper from 'swiper/bundle';
@@ -68,3 +68,14 @@ window.addEventListener('scroll', () => {
 });
 
 console.log('Reformas Integrales loaded');
+
+// Close mobile menu when a nav link is clicked
+document.querySelectorAll('.navbar a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (navbar.classList.contains('navbar-mobile')) {
+      navbar.classList.remove('navbar-mobile');
+      mobileNavToggle.classList.add('bi-list');
+      mobileNavToggle.classList.remove('bi-x');
+    }
+  });
+});
